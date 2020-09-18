@@ -1,0 +1,1 @@
+Blake: a [Nova](https://nova.app/) extension for linting your Python source code with [Flake8](https://flake8.pycqa.org/).

@@ -1,0 +1,27 @@
+{
+    "identifier": "flother.Blake",
+    "name": "Blake",
+    "organization": "Flother",
+    "description": "Lint your Python source code with Flake8",
+    "version": "0.1.0",
+    "categories": ["issues"],
+    "repository": "https://github.com/flother/nova-blake",
+    "bugs": "https://github.com/flother/nova-blake/issues",
+    "license": "MIT",
+    "main": "main.js",
+    "activationEvents": [
+        "onLanguage:python",
+    ],
+    "entitlements": {
+        "process": true
+    },
+    "configWorkspace": [
+        {
+            "key": "flother.Blake.flake8ExecutablePath",
+            "title": "Flake8 path",
+            "description": "Path to this workspace's Flake8 executable",
+            "type": "path",
+            "placeholder": "/usr/bin/env flake8"
+        }
+    ]
+}
