@@ -1,5 +1,5 @@
 {
-    "identifier": "flother.Blake",
+    "identifier": "is.flother.Blake",
     "name": "Blake",
     "organization": "Flother",
     "description": "Lint your Python source code with Flake8",
@@ -17,7 +17,7 @@
     },
     "configWorkspace": [
         {
-            "key": "flother.Blake.flake8ExecutablePath",
+            "key": "is.flother.Blake.flake8ExecutablePath",
             "title": "Flake8 path",
             "description": "Path to this workspace's Flake8 executable",
             "type": "path",
