@@ -5,6 +5,7 @@ class Flake8Process {
 
     constructor() {
         this.violations = [];
+        this.stdErrorOutput = "";
     }
 
     async process(commandArguments) {
@@ -25,6 +26,7 @@ class Flake8Process {
 
     async execute(path) {
         this.violations = [];
+        this.stdErrorOutput = "";
         const defaultArguments = [
             path
         ];
@@ -39,7 +41,7 @@ class Flake8Process {
     }
 
     handleError(error) {
-        console.error(error);
+        this.stdErrorOutput += error;
     }
 
     handleOutput(output) {
@@ -47,6 +49,9 @@ class Flake8Process {
     }
 
     didExit(exitStatus) {
+        if (this.stdErrorOutput) {
+            console.error(this.stdErrorOutput);
+        }
         this._onCompleteCallback(this.violations);
     }
 
