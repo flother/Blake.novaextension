@@ -12,6 +12,8 @@ Before using Blake you need to install Flake8. The recommended method is to use 
 
 If everything goes to plan, the `flake8` CLI will be available globally.
 
+If you do use Pipx to install Flake8 you can later install your favourite [Flake8 plugins](https://github.com/DmytroLitvinov/awesome-flake8-extensions) by [injecting them into the virtual environment](https://pipxproject.github.io/pipx/examples/#pipx-inject-example). For example, to install the [flake8-docstrings](https://gitlab.com/pycqa/flake8-docstrings) plugin: `pipe inject flake8 flake8-docstrings`. This is then automatically available when you run the `flake8` CLI.
+
 # Preferences
 
 By default, Flake8 will be run using `/usr/bin/env flake8`. However, you can configure this per project (Select _Project Settings..._ from the _Project_ menu, and look for the Blake environment).
