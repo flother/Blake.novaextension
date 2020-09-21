@@ -3,7 +3,7 @@
     "name": "Blake",
     "organization": "Flother",
     "description": "Lint your Python source code with Flake8",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "categories": ["issues"],
     "repository": "https://github.com/flother/nova-blake",
     "bugs": "https://github.com/flother/nova-blake/issues",
