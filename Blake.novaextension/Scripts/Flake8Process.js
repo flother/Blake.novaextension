@@ -33,6 +33,7 @@ class Flake8Process {
         if (!process) return;
         process.onStdout(this.handleOutput.bind(this));
         process.onStderr(this.handleError.bind(this));
+        process.onDidExit(this.didExit.bind(this));
 
         process.start();
     }
@@ -43,10 +44,10 @@ class Flake8Process {
 
     handleOutput(output) {
         this.violations.push(new Violation(output));
+    }
 
-        if (this._onCompleteCallback) {
-            this._onCompleteCallback(this.violations);
-        }
+    didExit(exitStatus) {
+        this._onCompleteCallback(this.violations);
     }
 
     onComplete(callback) {
