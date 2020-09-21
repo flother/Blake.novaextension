@@ -17,15 +17,13 @@ class Flake8Process {
             flake8Path,
             {
                 args: commandArguments,
-                cwd: nova.workspace.path,
-                env: {},
                 shell: true,
-                stdio: "pipe"
+                stdio: ["ignore", "pipe", "pipe"]
             }
         );
     }
 
-    async execute(content, path) {
+    async execute(path) {
         this.violations = [];
         const defaultArguments = [
             path
@@ -33,17 +31,10 @@ class Flake8Process {
 
         const process = await this.process(defaultArguments);
         if (!process) return;
-
         process.onStdout(this.handleOutput.bind(this));
         process.onStderr(this.handleError.bind(this));
 
         process.start();
-
-        const writer = process.stdin.getWriter();
-        writer.ready.then(() => {
-            writer.write(content);
-            writer.close();
-        });
     }
 
     handleError(error) {

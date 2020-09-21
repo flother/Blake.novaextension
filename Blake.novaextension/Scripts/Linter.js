@@ -9,17 +9,10 @@ class Linter {
     }
 
     async lintDocument(document) {
-        const contentRange = new Range(0, document.length);
-        const content = document.getTextInRange(contentRange);
-
-        return this.lintString(content, document);
-    }
-
-    async lintString(string, document) {
         this.process.onComplete(violations => {
             this.issues.set(document.uri, violations.map(violation => violation.issue));
         });
-        this.process.execute(string, document.path);
+        this.process.execute(document.path);
     }
 
     removeIssues(uri) {
