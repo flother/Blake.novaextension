@@ -2,9 +2,9 @@
     "identifier": "is.flother.Blake",
     "name": "Blake",
     "organization": "Flother",
-    "description": "Lint your Python source code with Flake8",
+    "description": "Lint your Python source code with Flake8, format them with Black",
     "version": "0.2.0",
-    "categories": ["issues"],
+    "categories": ["issues", "commands"],
     "repository": "https://github.com/flother/nova-blake",
     "bugs": "https://github.com/flother/nova-blake/issues",
     "license": "MIT",
@@ -15,13 +15,50 @@
     "entitlements": {
         "process": true
     },
+    "commands": {
+        "editor": [
+            {
+                "title": "Format Source Code with Black",
+                "command": "formatSourceCodeWithBlack",
+                "shortcut": "cmd-shift-B",
+                "filters": {
+                    "syntaxes": ["python"]
+                }
+            }
+        ]
+    },
     "configWorkspace": [
         {
-            "key": "is.flother.Blake.flake8ExecutablePath",
-            "title": "Flake8 path",
-            "description": "Path to this workspace's Flake8 executable",
-            "type": "path",
-            "placeholder": "/usr/bin/env flake8"
+            "title": "Flake8",
+            "type": "section",
+            "children": [
+                {
+                    "key": "is.flother.Blake.flake8ExecutablePath",
+                    "title": "Executable path",
+                    "description": "Path to this workspace's Flake8 executable",
+                    "type": "path",
+                    "placeholder": "/usr/bin/env flake8"
+                }
+            ]
+        },
+        {
+            "title": "Black",
+            "type": "section",
+            "children": [
+                {
+                    "key": "is.flother.Blake.blackExecutablePath",
+                    "title": "Executable path",
+                    "description": "Path to this workspace's Black executable",
+                    "type": "path",
+                    "placeholder": "/usr/bin/env black"
+                },
+                {
+                    "key": "is.flother.Blake.formatOnSave",
+                    "title": "Format Python source code files on save",
+                    "type": "boolean",
+                    "default": false
+                }
+            ]
         }
     ]
 }

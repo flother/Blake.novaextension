@@ -1,7 +1,9 @@
 const Linter = require("./Linter");
+const Formatter = require("./Formatter");
 
 exports.activate = function() {
     const linter = new Linter();
+    const formatter = new Formatter();
 
     nova.workspace.onDidAddTextEditor((editor) => {
         const document = editor.document;
@@ -12,6 +14,10 @@ exports.activate = function() {
 
         editor.onDidSave(editor => linter.lintDocument(document));
         document.onDidChangeSyntax(document => linter.lintDocument(document));
+        editor.onWillSave((editor) => {
+            const formatOnSave = nova.workspace.config.get("is.flother.Blake.formatOnSave");
+            if (formatOnSave) formatter.format(editor);
+        });
 
         editor.onDidDestroy(destroyedEditor => {
             let anotherEditor = nova.workspace.textEditors.find(editor => {
@@ -22,4 +28,6 @@ exports.activate = function() {
             }
         });
     });
+
+    nova.commands.register("formatSourceCodeWithBlack", (editor) => formatter.format(editor));
 };
