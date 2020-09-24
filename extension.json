@@ -2,7 +2,7 @@
     "identifier": "is.flother.Blake",
     "name": "Blake",
     "organization": "Flother",
-    "description": "Lint your Python source code with Flake8, format them with Black",
+    "description": "Lint your Python source code with Flake8, format it with Black",
     "version": "0.3.0",
     "categories": ["issues", "commands"],
     "repository": "https://github.com/flother/nova-blake",
