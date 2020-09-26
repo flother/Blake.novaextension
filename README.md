@@ -17,7 +17,9 @@ If you do use Pipx to install Flake8 you can later install your favourite [Flake
 
 # Installation
 
-Installation will eventually be available through [Nova's extension library](https://extensions.panic.com), but currently there's a bug on Panic's server that's stopping it being released. Until it's fixed, you can clone this repo and then, in Finder, double-click on the repo folder. Nova will then open and ask you if you want to install the extension.
+You can install Blake from [Nova's online extension library](https://extensions.panic.com/extensions/is.flother/is.flother.Blake/), or you can install it from within Nova itself (select _Extension Library..._ from the _Extensions_ menu and search for "blake").
+
+If you want to install a version for development, clone [the GitHub repo](https://github.com/flother/Blake.novaextension), open the code in Nova, and select _Activate Project as Extension_ from the _Extensions_ menu. Any changes you make to the code will be reflected in the extension for the duration of your Nova session.
 
 # Preferences
 
