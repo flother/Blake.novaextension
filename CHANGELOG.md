@@ -1,3 +1,13 @@
+## Version 0.4.0
+
+**Released 26th September 2020**
+
+- Remove trailing comma in extension manifest
+- Add instructions for installing from GitHub
+- Update GitHub URLs in extension manifest
+- Fix minor grammar error in extension description
+- Move extension code up to top level of repo
+
 ## Version 0.3.0
 
 **Released 22nd September 2020**

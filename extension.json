@@ -3,7 +3,7 @@
     "name": "Blake",
     "organization": "Flother",
     "description": "Lint your Python source code with Flake8, format it with Black",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "categories": ["issues", "commands"],
     "repository": "https://github.com/flother/Blake.novaextension",
     "bugs": "https://github.com/flother/Blake.novaextension/issues",
