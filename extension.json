@@ -10,7 +10,7 @@
     "license": "MIT",
     "main": "main.js",
     "activationEvents": [
-        "onLanguage:python",
+        "onLanguage:python"
     ],
     "entitlements": {
         "process": true
