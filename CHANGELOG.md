@@ -1,3 +1,9 @@
+## Version 0.4.1
+
+**Released 26th September 2020**
+
+- Update installation instructions
+
 ## Version 0.4.0
 
 **Released 26th September 2020**
