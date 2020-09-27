@@ -1,3 +1,10 @@
+## Version 0.4.2
+
+**Released 27th September 2020**
+
+- Add the extension to the formatters category
+- Clarify docs on using Flake8 plugins
+
 ## Version 0.4.1
 
 **Released 26th September 2020**
