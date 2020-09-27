@@ -13,7 +13,7 @@ Before using Blake you need to install Flake8 and Black. The recommended method 
 
 If everything goes to plan, the `flake8` and `black` CLIs will be available globally.
 
-If you do use Pipx to install Flake8 you can later install your favourite [Flake8 plugins](https://github.com/DmytroLitvinov/awesome-flake8-extensions) by [injecting them into the virtual environment](https://pipxproject.github.io/pipx/examples/#pipx-inject-example). For example, to install the [flake8-docstrings](https://gitlab.com/pycqa/flake8-docstrings) plugin: `pipx inject flake8 flake8-docstrings`. This is then automatically available when you run the `flake8` CLI.
+If you do use Pipx to install Flake8 you can later install your favourite [Flake8 plugins](https://github.com/DmytroLitvinov/awesome-flake8-extensions) by [injecting them into the virtual environment](https://pipxproject.github.io/pipx/examples/#pipx-inject-example). For example, to install the [flake8-docstrings](https://gitlab.com/pycqa/flake8-docstrings) plugin: `pipx inject flake8 flake8-docstrings`. The extra warnings and violations provided by the plugin will be immediately and automatically available to both Blake and the `flake8` CLI.
 
 # Installation
 
