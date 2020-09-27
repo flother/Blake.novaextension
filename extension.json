@@ -4,7 +4,7 @@
     "organization": "Flother",
     "description": "Lint your Python source code with Flake8, format it with Black",
     "version": "0.4.1",
-    "categories": ["issues", "commands"],
+    "categories": ["issues", "formatters", "commands"],
     "homepage": "https://extensions.panic.com/extensions/is.flother/is.flother.Blake/",
     "repository": "https://github.com/flother/Blake.novaextension",
     "bugs": "https://github.com/flother/Blake.novaextension/issues",
