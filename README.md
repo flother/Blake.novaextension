@@ -1,6 +1,6 @@
 Blake: a [Nova](https://nova.app/) extension for linting your Python source code with [Flake8](https://flake8.pycqa.org/), and formatting your code with [Black](https://black.readthedocs.io/).
 
-Blake runs Flake8 when you save a Python file, and reports any warnings and errors in [Nova's issues sidebar](https://library.panic.com/nova/sidebar/). You can also choose to format your code with Black every time you save, or just using ⌘⇧B whenever you wish.
+Blake runs Flake8 when you save a Python file, and reports any warnings and errors in [Nova's issues sidebar](https://library.panic.com/nova/sidebar/). You can also choose to format your code with Black every time you save, or just using the _Editor_ ➞ _Format Source Code with Black_ menu item whenever you wish (shortcut: ⌘⇧B).
 
 # Prerequisites
 
