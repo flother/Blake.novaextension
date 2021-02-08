@@ -1,3 +1,10 @@
+## Version 0.5.0
+
+**Released 8th February 2021**
+
+- Bug fix: fail gracefully when the Black or Flake8 Python libraries aren't available ([`f35f2d27`](https://github.com/flother/Blake.novaextension/commit/f35f2d278c162fc89b0483f63dc2e5c8c6f334cb))
+- Improvement: document "Format Source Code with Black" menu item ([`7053ac08`](https://github.com/flother/Blake.novaextension/commit/7053ac0893895f563eaa319c0b069d0a33b23434))
+
 ## Version 0.4.2
 
 **Released 27th September 2020**
