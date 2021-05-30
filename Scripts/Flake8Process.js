@@ -18,6 +18,7 @@ class Flake8Process {
             flake8Path,
             {
                 args: commandArguments,
+                cwd: nova.workspace.path,
                 shell: true,
                 stdio: ["ignore", "pipe", "pipe"]
             }
