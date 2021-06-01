@@ -1,3 +1,9 @@
+## Version 0.5.1
+
+**Released 1st June 2021**
+
+- Bug fix: improve detection of Flake8 config (commit [`f1404e9c`](https://github.com/flother/Blake.novaextension/commit/f1404e9c718c89d761b8b3843a3c60cf73f41035) and [PR #2](https://github.com/flother/Blake.novaextension/pull/2))
+
 ## Version 0.5.0
 
 **Released 8th February 2021**
