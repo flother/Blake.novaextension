@@ -1,4 +1,5 @@
 class BlackProcess {
+
     constructor() {
         this.stdOutOutput = "";
         this.stdErrorOutput = "";
@@ -11,11 +12,14 @@ class BlackProcess {
             blackPath = "/usr/bin/env";
             commandArguments = ["black", ...commandArguments];
         }
-        return new Process(blackPath, {
-            args: commandArguments,
-            shell: true,
-            stdio: "pipe",
-        });
+        return new Process(
+            blackPath,
+            {
+                args: commandArguments,
+                shell: true,
+                stdio: "pipe"
+            }
+        );
     }
 
     execute(content) {

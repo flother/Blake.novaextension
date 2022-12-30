@@ -1,6 +1,7 @@
 const BlackProcess = require("./BlackProcess");
 
 class Formatter {
+
     constructor() {
         this.process = new BlackProcess();
     }
