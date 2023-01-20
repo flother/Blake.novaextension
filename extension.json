@@ -54,6 +54,12 @@
                     "placeholder": "/usr/bin/env black"
                 },
                 {
+                    "key": "is.flother.Blake.maxLineLength",
+                    "title": "Max line length",
+                    "type": "number",
+                    "placeholder": 88
+                },
+                {
                     "key": "is.flother.Blake.formatOnSave",
                     "title": "Format Python source code files on save",
                     "type": "boolean",

@@ -6,7 +6,11 @@ class BlackProcess {
 
   process() {
     let blackPath = nova.workspace.config.get("is.flother.Blake.blackExecutablePath");
+    const maxLineLength = nova.workspace.config.get("is.flother.Blake.maxLineLength");
     let commandArguments = ["--quiet", "-"];
+    if (maxLineLength) {
+      commandArguments = ["--line-length", maxLineLength.toString(), ...commandArguments];
+    }
     if (!blackPath) {
       blackPath = "/usr/bin/env";
       commandArguments = ["black", ...commandArguments];

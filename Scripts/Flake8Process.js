@@ -8,6 +8,10 @@ class Flake8Process {
 
   async process(commandArguments) {
     let flake8Path = nova.workspace.config.get("is.flother.Blake.flake8ExecutablePath");
+    const maxLineLength = nova.workspace.config.get("is.flother.Blake.maxLineLength");
+    if (maxLineLength) {
+      commandArguments = ["--max-line-length", maxLineLength.toString(), ...commandArguments];
+    }
     if (!flake8Path) {
       flake8Path = "/usr/bin/env";
       commandArguments = ["flake8", ...commandArguments];
