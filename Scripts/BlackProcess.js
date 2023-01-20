@@ -24,7 +24,9 @@ class BlackProcess {
       this.stdErrorOutput = "";
 
       const process = this.process();
-      if (!process) return;
+      if (!process) {
+        return;
+      }
 
       process.onStdout(this.handleOutput.bind(this));
       process.onStderr(this.handleError.bind(this));

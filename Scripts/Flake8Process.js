@@ -26,7 +26,9 @@ class Flake8Process {
     const defaultArguments = [path];
 
     const process = await this.process(defaultArguments);
-    if (!process) return;
+    if (!process) {
+      return;
+    }
     process.onStdout(this.handleOutput.bind(this));
     process.onStderr(this.handleError.bind(this));
     process.onDidExit(this.didExit.bind(this));

@@ -8,7 +8,9 @@ exports.activate = function () {
   nova.workspace.onDidAddTextEditor((editor) => {
     const document = editor.document;
 
-    if (document.syntax !== "python") return;
+    if (document.syntax !== "python") {
+      return;
+    }
 
     linter.lintDocument(document);
 
@@ -16,7 +18,9 @@ exports.activate = function () {
     document.onDidChangeSyntax((document) => linter.lintDocument(document));
     editor.onWillSave((editor) => {
       const formatOnSave = nova.workspace.config.get("is.flother.Blake.formatOnSave");
-      if (formatOnSave) return formatter.format(editor);
+      if (formatOnSave) {
+        return formatter.format(editor);
+      }
     });
 
     editor.onDidDestroy((destroyedEditor) => {

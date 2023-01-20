@@ -20,7 +20,9 @@ class Formatter {
   }
 
   format(editor) {
-    if (editor.document.isEmpty) return;
+    if (editor.document.isEmpty) {
+      return;
+    }
 
     const textRange = new Range(0, editor.document.length);
     const content = editor.document.getTextInRange(textRange);
