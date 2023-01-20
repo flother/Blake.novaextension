@@ -1,3 +1,10 @@
+## Version 0.6.0
+
+**Released 20th January 2023**
+
+- Refactor for asynchronous saving (see [#4](https://github.com/flother/Blake.novaextension/pull/4))
+- Add per-project setting for setting maximum line length
+
 ## Version 0.5.1
 
 **Released 1st June 2021**
