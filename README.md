@@ -25,4 +25,4 @@ If you want to install a version for development, clone [the GitHub repo](https:
 
 By default Flake8 will be run using `/usr/bin/env flake8`, and Black using `/usr/bin/env black`. However, you can configure this per project (Select _Project Settings..._ from the _Project_ menu, and look for the Blake environment). There's also a per-project setting to format your source files every time you save (off by default).
 
-You can [configure Flake8](https://flake8.pycqa.org/en/latest/user/configuration.html) and [set your Black preferences](https://black.readthedocs.io/en/stable/pyproject_toml.html) in the usual manner.
+You can [configure Flake8](https://flake8.pycqa.org/en/latest/user/configuration.html) and [set your Black preferences](https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#configuration-via-a-file) in the usual manner.
