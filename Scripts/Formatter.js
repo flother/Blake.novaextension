@@ -6,11 +6,11 @@ class Formatter {
   }
 
   notifyError(message) {
-    let request = new NotificationRequest("blake-black-error");
+    const request = new NotificationRequest("blake-black-error");
     request.title = nova.localize("Black error");
     request.body = nova.localize(message);
     request.actions = [nova.localize("OK")];
-    let promise = nova.notifications.add(request);
+    const promise = nova.notifications.add(request);
     promise.then(
       (reply) => {},
       (error) => {

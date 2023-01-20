@@ -27,8 +27,8 @@ class Violation {
 
   parseLine(line) {
     // %(path)s:%(row)d:%(col)d: %(code)s %(text)s
-    let data = line.trim().split(":", 4);
-    let codeMessage = data[3].trim().split(/ (.+)/);
+    const data = line.trim().split(":", 4);
+    const codeMessage = data[3].trim().split(/ (.+)/);
     return {
       code: codeMessage[0],
       message: data[3],

@@ -46,11 +46,11 @@ class Flake8Process {
 
   didExit(exitStatus) {
     if (this.stdErrorOutput) {
-      let request = new NotificationRequest("blake-flake8-error");
+      const request = new NotificationRequest("blake-flake8-error");
       request.title = nova.localize("Flake8 error");
       request.body = nova.localize(this.stdErrorOutput);
       request.actions = [nova.localize("OK")];
-      let promise = nova.notifications.add(request);
+      const promise = nova.notifications.add(request);
       promise.then(
         (reply) => {},
         (error) => {

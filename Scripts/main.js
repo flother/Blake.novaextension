@@ -24,7 +24,7 @@ exports.activate = function () {
     });
 
     editor.onDidDestroy((destroyedEditor) => {
-      let anotherEditor = nova.workspace.textEditors.find((editor) => {
+      const anotherEditor = nova.workspace.textEditors.find((editor) => {
         return editor.document.path === destroyedEditor.document.path;
       });
       if (!anotherEditor) {
