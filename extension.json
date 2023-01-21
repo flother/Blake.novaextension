@@ -1,71 +1,69 @@
 {
-    "identifier": "is.flother.Blake",
-    "name": "Blake",
-    "organization": "Flother",
-    "description": "Lint your Python source code with Flake8, format it with Black",
-    "version": "0.6.0",
-    "categories": ["issues", "formatters", "commands"],
-    "homepage": "https://extensions.panic.com/extensions/is.flother/is.flother.Blake/",
-    "repository": "https://github.com/flother/Blake.novaextension",
-    "bugs": "https://github.com/flother/Blake.novaextension/issues",
-    "license": "MIT",
-    "main": "main.js",
-    "activationEvents": [
-        "onLanguage:python"
-    ],
-    "entitlements": {
-        "process": true
-    },
-    "commands": {
-        "editor": [
-            {
-                "title": "Format Source Code with Black",
-                "command": "formatSourceCodeWithBlack",
-                "shortcut": "cmd-shift-B",
-                "filters": {
-                    "syntaxes": ["python"]
-                }
-            }
-        ]
-    },
-    "configWorkspace": [
+  "identifier": "is.flother.Blake",
+  "name": "Blake",
+  "organization": "Flother",
+  "description": "Lint your Python source code with Flake8, format it with Black",
+  "version": "0.6.0",
+  "categories": ["issues", "formatters", "commands"],
+  "homepage": "https://extensions.panic.com/extensions/is.flother/is.flother.Blake/",
+  "repository": "https://github.com/flother/Blake.novaextension",
+  "bugs": "https://github.com/flother/Blake.novaextension/issues",
+  "license": "MIT",
+  "main": "main.js",
+  "activationEvents": ["onLanguage:python"],
+  "entitlements": {
+    "process": true
+  },
+  "commands": {
+    "editor": [
+      {
+        "title": "Format Source Code with Black",
+        "command": "formatSourceCodeWithBlack",
+        "shortcut": "cmd-shift-B",
+        "filters": {
+          "syntaxes": ["python"]
+        }
+      }
+    ]
+  },
+  "configWorkspace": [
+    {
+      "title": "Flake8",
+      "type": "section",
+      "children": [
         {
-            "title": "Flake8",
-            "type": "section",
-            "children": [
-                {
-                    "key": "is.flother.Blake.flake8ExecutablePath",
-                    "title": "Executable path",
-                    "description": "Path to this workspace's Flake8 executable",
-                    "type": "path",
-                    "placeholder": "/usr/bin/env flake8"
-                }
-            ]
+          "key": "is.flother.Blake.flake8ExecutablePath",
+          "title": "Executable path",
+          "description": "Path to this workspace's Flake8 executable",
+          "type": "path",
+          "placeholder": "/usr/bin/env flake8"
+        }
+      ]
+    },
+    {
+      "title": "Black",
+      "type": "section",
+      "children": [
+        {
+          "key": "is.flother.Blake.blackExecutablePath",
+          "title": "Executable path",
+          "description": "Path to this workspace's Black executable",
+          "type": "path",
+          "placeholder": "/usr/bin/env black"
         },
         {
-            "title": "Black",
-            "type": "section",
-            "children": [
-                {
-                    "key": "is.flother.Blake.blackExecutablePath",
-                    "title": "Executable path",
-                    "description": "Path to this workspace's Black executable",
-                    "type": "path",
-                    "placeholder": "/usr/bin/env black"
-                },
-                {
-                    "key": "is.flother.Blake.maxLineLength",
-                    "title": "Max line length",
-                    "type": "number",
-                    "placeholder": 88
-                },
-                {
-                    "key": "is.flother.Blake.formatOnSave",
-                    "title": "Format Python source code files on save",
-                    "type": "boolean",
-                    "default": false
-                }
-            ]
+          "key": "is.flother.Blake.maxLineLength",
+          "title": "Max line length",
+          "type": "number",
+          "placeholder": 88
+        },
+        {
+          "key": "is.flother.Blake.formatOnSave",
+          "title": "Format Python source code files on save",
+          "type": "boolean",
+          "default": false
         }
-    ]
+      ]
+    }
+  ]
 }
