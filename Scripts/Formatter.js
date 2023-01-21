@@ -12,7 +12,7 @@ class Formatter {
     request.actions = [nova.localize("OK")];
     const promise = nova.notifications.add(request);
     promise.then(
-      reply => { },
+      _ => { },
       error => {
         console.error(error);
       }
