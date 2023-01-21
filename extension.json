@@ -28,6 +28,19 @@
   },
   "configWorkspace": [
     {
+      "title": "General",
+      "type": "section",
+      "children": [
+        {
+          "key": "is.flother.Blake.maxLineLength",
+          "title": "Max line length",
+          "description": "Maximum number of characters allowed per line",
+          "type": "number",
+          "placeholder": 88
+        }
+      ]
+    },
+    {
       "title": "Flake8",
       "type": "section",
       "children": [
@@ -50,12 +63,6 @@
           "description": "Path to this workspace's Black executable",
           "type": "path",
           "placeholder": "/usr/bin/env black"
-        },
-        {
-          "key": "is.flother.Blake.maxLineLength",
-          "title": "Max line length",
-          "type": "number",
-          "placeholder": 88
         },
         {
           "key": "is.flother.Blake.formatOnSave",
