@@ -56,10 +56,10 @@ class Flake8Process {
       request.actions = [nova.localize("OK")];
       const promise = nova.notifications.add(request);
       promise.then(
-        (reply) => {},
-        (error) => {
+        reply => { },
+        error => {
           console.error(error);
-        },
+        }
       );
     }
     this._onCompleteCallback(this.violations);

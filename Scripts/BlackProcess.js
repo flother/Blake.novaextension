@@ -34,7 +34,7 @@ class BlackProcess {
 
       process.onStdout(this.handleOutput.bind(this));
       process.onStderr(this.handleError.bind(this));
-      process.onDidExit((status) => {
+      process.onDidExit(status => {
         if (status === 0) {
           resolve(this.stdOutOutput);
         } else {

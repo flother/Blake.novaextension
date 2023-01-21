@@ -12,10 +12,10 @@ class Formatter {
     request.actions = [nova.localize("OK")];
     const promise = nova.notifications.add(request);
     promise.then(
-      (reply) => {},
-      (error) => {
+      reply => { },
+      error => {
         console.error(error);
-      },
+      }
     );
   }
 
@@ -28,13 +28,13 @@ class Formatter {
     const content = editor.document.getTextInRange(textRange);
     return this.process
       .execute(content)
-      .then((formattedContent) => {
+      .then(formattedContent => {
         // If Black isn't installed, the existing code will be formatted as
         // a single space. If that's the case, we skip that step.
         const isChangedContent = formattedContent !== content;
         const isNonEmptyContent = formattedContent.trim() !== "";
         if (isChangedContent && isNonEmptyContent) {
-          editor.edit((edit) => {
+          editor.edit(edit => {
             edit.replace(textRange, formattedContent);
           });
         }

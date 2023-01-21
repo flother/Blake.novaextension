@@ -7,10 +7,10 @@ class Linter {
   }
 
   async lintDocument(document) {
-    this.process.onComplete((violations) => {
+    this.process.onComplete(violations => {
       this.issues.set(
         document.uri,
-        violations.map((violation) => violation.issue),
+        violations.map(violation => violation.issue)
       );
     });
     this.process.execute(document.path);
