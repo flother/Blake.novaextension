@@ -1,12 +1,12 @@
 const Linter = require("./Linter");
 const Formatter = require("./Formatter");
 
-exports.activate = function() {
+exports.activate = () => {
   const linter = new Linter();
   const formatter = new Formatter();
 
   nova.workspace.onDidAddTextEditor(editor => {
-    const document = editor.document;
+    const { document } = editor;
 
     if (document.syntax !== "python") {
       return;
@@ -14,19 +14,20 @@ exports.activate = function() {
 
     linter.lintDocument(document);
 
-    editor.onDidSave(_ => linter.lintDocument(document));
-    document.onDidChangeSyntax(document => linter.lintDocument(document));
-    editor.onWillSave(editor => {
+    editor.onDidSave(() => linter.lintDocument(document));
+    document.onDidChangeSyntax(linter.lintDocument);
+    editor.onWillSave(ed => {
       const formatOnSave = nova.workspace.config.get("is.flother.Blake.formatOnSave");
       if (formatOnSave) {
-        return formatter.format(editor);
+        return formatter.format(ed);
       }
+      return null;
     });
 
     editor.onDidDestroy(destroyedEditor => {
-      const anotherEditor = nova.workspace.textEditors.find(editor => {
-        return editor.document.path === destroyedEditor.document.path;
-      });
+      const anotherEditor = nova.workspace.textEditors.find(
+        ed => ed.document.path === destroyedEditor.document.path
+      );
       if (!anotherEditor) {
         linter.removeIssues(destroyedEditor.document.uri);
       }

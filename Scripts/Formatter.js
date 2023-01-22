@@ -12,8 +12,9 @@ class Formatter {
     request.actions = [nova.localize("OK")];
     const promise = nova.notifications.add(request);
     promise.then(
-      _ => { },
+      () => { },
       error => {
+        // eslint-disable-next-line no-console -- Last ditch attempt to put the error somewhere.
         console.error(error);
       }
     );
@@ -21,7 +22,7 @@ class Formatter {
 
   format(editor) {
     if (editor.document.isEmpty) {
-      return;
+      return null;
     }
 
     const textRange = new Range(0, editor.document.length);

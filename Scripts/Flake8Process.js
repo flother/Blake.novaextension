@@ -9,15 +9,16 @@ class Flake8Process {
   async process(commandArguments) {
     let flake8Path = nova.workspace.config.get("is.flother.Blake.flake8ExecutablePath");
     const maxLineLength = nova.workspace.config.get("is.flother.Blake.maxLineLength");
+    let args = commandArguments;
     if (maxLineLength) {
-      commandArguments = ["--max-line-length", maxLineLength.toString(), ...commandArguments];
+      args = ["--max-line-length", maxLineLength.toString(), ...args];
     }
     if (!flake8Path) {
       flake8Path = "/usr/bin/env";
-      commandArguments = ["flake8", ...commandArguments];
+      args = ["flake8", ...args];
     }
     return new Process(flake8Path, {
-      args: commandArguments,
+      args,
       cwd: nova.workspace.path,
       shell: true,
       stdio: ["ignore", "pipe", "pipe"],
@@ -56,17 +57,18 @@ class Flake8Process {
       request.actions = [nova.localize("OK")];
       const promise = nova.notifications.add(request);
       promise.then(
-        _ => { },
+        () => { },
         error => {
+          // eslint-disable-next-line no-console -- Last ditch attempt to put the error somewhere.
           console.error(error);
         }
       );
     }
-    this._onCompleteCallback(this.violations);
+    this.onCompleteCallback(this.violations);
   }
 
   onComplete(callback) {
-    this._onCompleteCallback = callback;
+    this.onCompleteCallback = callback;
   }
 }
 

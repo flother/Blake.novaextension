@@ -32,8 +32,8 @@ class Violation {
     return {
       code: codeMessage[0],
       message: data[3],
-      col: parseInt(data[2]),
-      row: parseInt(data[1]),
+      col: parseInt(data[2], 10),
+      row: parseInt(data[1], 10),
     };
   }
 
