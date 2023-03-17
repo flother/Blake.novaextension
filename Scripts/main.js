@@ -17,7 +17,9 @@ exports.activate = () => {
     editor.onDidSave(() => linter.lintDocument(document));
     document.onDidChangeSyntax(linter.lintDocument);
     editor.onWillSave(ed => {
-      const formatOnSave = nova.workspace.config.get("is.flother.Blake.formatOnSave");
+      const formatOnSave =
+        nova.workspace.config.get("is.flother.Blake.formatOnSave") ||
+        nova.config.get("is.flother.Blake.formatOnSave");
       if (formatOnSave) {
         return formatter.format(ed);
       }

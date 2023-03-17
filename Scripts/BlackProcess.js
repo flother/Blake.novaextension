@@ -5,8 +5,12 @@ class BlackProcess {
   }
 
   process() {
-    let blackPath = nova.workspace.config.get("is.flother.Blake.blackExecutablePath");
-    const maxLineLength = nova.workspace.config.get("is.flother.Blake.maxLineLength");
+    let blackPath =
+      nova.workspace.config.get("is.flother.Blake.blackExecutablePath") ??
+      nova.config.get("is.flother.Blake.blackExecutablePath");
+    const maxLineLength =
+      nova.workspace.config.get("is.flother.Blake.maxLineLength") ??
+      nova.config.get("is.flother.Blake.maxLineLength");
     let commandArguments = ["--quiet", "-"];
     if (maxLineLength) {
       commandArguments = ["--line-length", maxLineLength.toString(), ...commandArguments];

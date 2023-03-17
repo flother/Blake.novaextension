@@ -1,0 +1,47 @@
+[
+  {
+    "title": "General",
+    "type": "section",
+    "children": [
+      {
+        "key": "is.flother.Blake.maxLineLength",
+        "title": "Max line length",
+        "description": "Maximum number of characters allowed per line",
+        "type": "number",
+        "placeholder": 88
+      }
+    ]
+  },
+  {
+    "title": "Flake8",
+    "type": "section",
+    "children": [
+      {
+        "key": "is.flother.Blake.flake8ExecutablePath",
+        "title": "Executable path",
+        "description": "Path to this workspace's Flake8 executable",
+        "type": "path",
+        "placeholder": "/usr/bin/env flake8"
+      }
+    ]
+  },
+  {
+    "title": "Black",
+    "type": "section",
+    "children": [
+      {
+        "key": "is.flother.Blake.blackExecutablePath",
+        "title": "Executable path",
+        "description": "Path to this workspace's Black executable",
+        "type": "path",
+        "placeholder": "/usr/bin/env black"
+      },
+      {
+        "key": "is.flother.Blake.formatOnSave",
+        "title": "Format Python source code files on save",
+        "type": "boolean",
+        "default": false
+      }
+    ]
+  }
+]

@@ -7,8 +7,12 @@ class Flake8Process {
   }
 
   async process(commandArguments) {
-    let flake8Path = nova.workspace.config.get("is.flother.Blake.flake8ExecutablePath");
-    const maxLineLength = nova.workspace.config.get("is.flother.Blake.maxLineLength");
+    let flake8Path =
+      nova.workspace.config.get("is.flother.Blake.flake8ExecutablePath") ??
+      nova.config.get("is.flother.Blake.flake8ExecutablePath");
+    const maxLineLength =
+      nova.workspace.config.get("is.flother.Blake.maxLineLength") ??
+      nova.config.get("is.flother.Blake.maxLineLength");
     let args = commandArguments;
     if (maxLineLength) {
       args = ["--max-line-length", maxLineLength.toString(), ...args];
