@@ -23,9 +23,15 @@ If you want to install a version for development, clone [the GitHub repo](https:
 
 # Preferences
 
-By default Flake8 will be run using `/usr/bin/env flake8`, and Black using `/usr/bin/env black`. However, you can configure this per project (Select _Project Settings..._ from the _Project_ menu, and look for the Blake environment). Along with these options, there are per-project settings to:
+By default Flake8 will be run using `/usr/bin/env flake8`, and Black using `/usr/bin/env black`. However you can configure this either for one particular project or for all Python projects within Nova.
+
+- To configure an individual project: select _Project Settings..._ from the _Project_ menu, and look for the Blake environment
+- To configure all Python projects: select _Extension Library..._ from the _Extensions_ menu, look for Blake under _Installed Extensions_ in the sidebar, and click _Settings_
+
+An individual project's settings will override the global preferences. Blake's preferences also allow you to:
 
 - Format your source files every time you save (off by default)
 - Set preferred maximum line length (default unset, meaning Black decides)
+- Use [Black's preview style](https://black.readthedocs.io/en/stable/the_black_code_style/future_style.html#preview-style) (off by default)
 
 For further configuration, you can [configure Flake8](https://flake8.pycqa.org/en/latest/user/configuration.html) and [set your Black preferences](https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#configuration-via-a-file) using the standard config files.
