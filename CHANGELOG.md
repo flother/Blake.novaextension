@@ -1,3 +1,10 @@
+## Version 0.7.0
+
+**Released 17th March 2023**
+
+- Global preferences are now available as well as per-project preferences. A global preference will be used when it hasn't been set at the project level
+- Support [Black's preview style](https://black.readthedocs.io/en/stable/the_black_code_style/future_style.html#preview-style)
+
 ## Version 0.6.0
 
 **Released 20th January 2023**
