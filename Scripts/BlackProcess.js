@@ -11,9 +11,15 @@ class BlackProcess {
     const maxLineLength =
       nova.workspace.config.get("is.flother.Blake.maxLineLength") ??
       nova.config.get("is.flother.Blake.maxLineLength");
+    const previewStyle =
+      nova.workspace.config.get("is.flother.Blake.blackPreviewStyle") ||
+      nova.config.get("is.flother.Blake.blackPreviewStyle");
     let commandArguments = ["--quiet", "-"];
     if (maxLineLength) {
       commandArguments = ["--line-length", maxLineLength.toString(), ...commandArguments];
+    }
+    if (previewStyle) {
+      commandArguments = ["--preview", ...commandArguments];
     }
     if (!blackPath) {
       blackPath = "/usr/bin/env";

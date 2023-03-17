@@ -41,6 +41,14 @@
         "title": "Format Python source code files on save",
         "type": "boolean",
         "default": false
+      },
+      {
+        "key": "is.flother.Blake.blackPreviewStyle",
+        "title": "Enable preview style",
+        "description": "Include experimental style changes",
+        "link": "https://black.readthedocs.io/en/stable/the_black_code_style/future_style.html#preview-style",
+        "type": "boolean",
+        "default": false
       }
     ]
   }
