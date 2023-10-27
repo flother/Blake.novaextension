@@ -2,7 +2,7 @@
 
 **Released 17th March 2023**
 
-- Document the support got global preferences
+- Document the support for global preferences
 - Document the new "Black preview style" preference
 
 ## Version 0.7.0
